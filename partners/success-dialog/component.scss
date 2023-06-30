@@ -1,0 +1,28 @@
+@import "assets/scss/helper";
+
+.partners-success-dialog {
+  &__dialog {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    /* stylelint-disable selector-pseudo-element-no-unknown */
+    &::v-deep {
+      .el-dialog__body {
+        display: block;
+      }
+    }
+  }
+
+  &__picture {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__description {
+    @include fontMontserrat14Regular;
+
+    margin: 20px 0 20px;
+    text-align: center;
+  }
+}

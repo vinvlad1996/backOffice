@@ -1,0 +1,132 @@
+@import "~element-ui/packages/theme-chalk/src/mixins/mixins";
+@import "~element-ui/packages/theme-chalk/src/table";
+@import "~element-ui/packages/theme-chalk/src/table-column";
+@import "assets/scss/helper";
+
+$root: "el-table";
+
+.partners-table {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+
+  &__button-label {
+    @include fontMontserrat14Regular;
+
+    display: block;
+    width: 100%;
+    color: $grey-basic50;
+    text-align: left;
+    text-decoration: underline;
+  }
+
+  &__text {
+    &--view {
+      &-default {
+        @include fontMontserrat12Regular;
+      }
+
+      &-bold {
+        @include fontMontserrat12SemiBold;
+      }
+
+      &-danger {
+        @include fontMontserrat12Regular;
+
+        color: $red-orange;
+      }
+    }
+
+    &--position {
+      &-default {
+        text-align: right;
+      }
+
+      &-left {
+        text-align: left;
+      }
+    }
+  }
+
+  &__label {
+    @include fontMontserrat12SemiBold;
+  }
+
+  .#{$root} {
+    border: 1px solid $grey-basic05;
+    border-radius: 10px;
+
+    @include b(table) {
+      width: 100%;
+
+      @include e(cell) {
+        color: $black;
+        border-right: 1px solid $grey-basic05;
+
+        &:last-child {
+          border-right: none;
+        }
+      }
+
+      @include e(row) {
+        &.striped,
+        &.striped-long {
+          background-color: $grey-basic05;
+        }
+
+        &.higher {
+          td {
+            &.#{$root}__cell {
+              padding: 10px 0;
+            }
+          }
+        }
+      }
+
+      @include e(header) {
+        th {
+          &.#{$root}__cell {
+            @include fontMontserrat12SemiBold;
+
+            padding: 0;
+            padding-top: 12px;
+            text-align: center;
+            background-color: $grey-basic10 !important;
+
+            .cell {
+              padding: 0 8px;
+            }
+          }
+        }
+      }
+
+      @include e(body) {
+        tr {
+          &:hover {
+            .#{$root}__cell {
+              background-color: $grey-basic05;
+            }
+          }
+        }
+
+        td {
+          &.#{$root}__cell {
+            padding: 4px 0;
+            text-align: right;
+            vertical-align: middle;
+
+            .cell {
+              padding: 0 8px;
+            }
+          }
+        }
+      }
+
+      @include e(body-wrapper) {
+        scrollbar-color: $orange $white;
+        scrollbar-width: thin;
+        padding-bottom: 10px;
+      }
+    }
+  }
+}

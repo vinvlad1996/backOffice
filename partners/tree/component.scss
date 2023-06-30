@@ -1,0 +1,142 @@
+@import "assets/scss/helper";
+
+.partners-tree {
+  padding-bottom: 20px;
+  overflow: auto;
+
+  &__wrapper {
+    width: 952px;
+    margin: 0 20px;
+  }
+
+  &__header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    width: 932px;
+    padding: 20px 25px;
+    background-color: $white;
+    border-radius: 8px;
+  }
+
+  &__name {
+    @include fontMontserrat14SemiBold;
+
+    position: sticky;
+    left: 25px;
+  }
+
+  &__filter-button {
+    position: sticky;
+    right: 25px;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    margin-top: 28px;
+    padding: 0;
+    column-gap: 4px;
+    list-style: none;
+  }
+
+  &__item {
+    position: relative;
+
+    &::before {
+      position: absolute;
+      top: -28px;
+      left: 50%;
+      display: block;
+      width: 2px;
+      height: 28px;
+      background-color: $white;
+      content: "";
+    }
+  }
+
+  &__label {
+    @include fontMontserrat10Regular;
+
+    color: $grey-basic50;
+    text-align: center;
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 100px;
+    height: 84px;
+    padding: 0 8px;
+    background-color: $white;
+    border: 1px solid transparent;
+    border-radius: 8px;
+
+    &--view {
+      &-default {
+        text-align: left;
+        row-gap: 4px;
+      }
+
+      &-selected {
+        background-color: $white;
+        border-color: $orange;
+        row-gap: 7px;
+      }
+
+      &-available {
+        border-color: $grey-basic50;
+      }
+
+      &-not-available {
+        border-color: $grey-basic30;
+      }
+    }
+  }
+
+  &__text {
+    @include fontMontserrat12Regular;
+
+    &--colored {
+      color: $green;
+      text-align: left;
+    }
+
+    &--ellipsis {
+      display: -webkit-box;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+
+    &--bold-colored {
+      @include fontMontserrat12SemiBold;
+
+      color: $orange;
+      text-align: center;
+    }
+
+    &--grey {
+      @include fontMontserrat12SemiBold;
+
+      color: $grey-basic30;
+      text-align: center;
+    }
+
+    &--small {
+      @include fontMontserrat10Regular;
+
+      color: $grey-basic50;
+    }
+  }
+
+  &__icon {
+    margin: 0 auto;
+  }
+}

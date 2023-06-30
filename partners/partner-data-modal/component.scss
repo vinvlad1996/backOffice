@@ -1,0 +1,59 @@
+@import "assets/scss/helper";
+
+.partner-data-modal {
+  padding: 0 20px;
+
+  &__personal-data {
+    @include fontMontserrat12Regular;
+
+    padding: 9px 0 11px;
+    color: $grey-basic50;
+  }
+
+  &__profile-name {
+    @include fontMontserrat14Regular;
+
+    margin-bottom: 5px;
+    text-decoration: underline;
+  }
+
+  &__profile {
+    display: flex;
+  }
+
+  &__addresses {
+    margin-bottom: 9px;
+  }
+
+  &__photo {
+    width: 65px;
+    height: 65px;
+    margin-right: 20px;
+    border-radius: 8px;
+  }
+
+  &__partner-data {
+    margin-bottom: 20px;
+    column-gap: 20px;
+  }
+
+  &__subdata {
+    @include fontMontserrat14Regular;
+
+    display: flex;
+    flex-direction: row;
+    color: $grey-basic50;
+    column-gap: 10px;
+  }
+
+  &__subtitle {
+    @include fontMontserrat14Regular;
+
+    margin: 4px 0 9px;
+    color: $black;
+  }
+
+  &__activity {
+    margin-top: 12px;
+  }
+}

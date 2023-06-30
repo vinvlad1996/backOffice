@@ -1,0 +1,48 @@
+@import "assets/scss/helper";
+
+.partners-list {
+  @include fontMontserrat12Regular;
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    row-gap: 8px;
+  }
+
+  &__item {
+    display: grid;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(190, 196, 210, 0.25);
+    row-gap: 12px;
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__text {
+    @include fontMontserrat12Regular;
+
+    color: $grey-basic50;
+
+    &--underline {
+      text-decoration: underline;
+    }
+
+    &--bold {
+      @include fontMontserrat12SemiBold;
+
+      color: $black;
+    }
+  }
+
+  &__title {
+    @include fontMontserrat14SemiBold;
+  }
+}

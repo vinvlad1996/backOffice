@@ -1,0 +1,112 @@
+@import "assets/scss/helper";
+
+.partners-connections-dialog {
+  @include fontMontserrat12Regular;
+
+  &__dialog {
+    /* stylelint-disable selector-pseudo-element-no-unknown */
+    &::v-deep {
+      .el-dialog {
+        padding: 0;
+      }
+
+      .el-dialog__header {
+        margin-bottom: -8px;
+        padding: 20px 20px 10px;
+      }
+    }
+  }
+
+  &__start-partner {
+    padding: 0 20px;
+  }
+
+  &__partner-data {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 20px 0 4px;
+    column-gap: 12px;
+  }
+
+  &__go-status {
+    color: $grey-basic50;
+  }
+
+  &__rank-title {
+    color: $grey-basic50;
+  }
+
+  &__name-partner {
+    @include fontMontserrat14SemiBold;
+
+    margin-bottom: 20px;
+  }
+
+  &__container {
+    height: 350px;
+    overflow: scroll;
+    direction: ltr;
+  }
+
+  &__hierarchy-list {
+    width: 120%;
+    padding: 0 20px;
+    direction: ltr;
+    background-color: $grey-basic05;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    padding-bottom: 12px;
+    column-gap: 6px;
+  }
+
+  &__login {
+    color: $orange;
+  }
+
+  &__item-name {
+    @include fontMontserrat12SemiBold;
+  }
+
+  &__sponsor-id {
+    color: $grey-basic50;
+    text-decoration: underline;
+  }
+
+  &__name-sponsor {
+    color: $grey-basic50;
+  }
+
+  &__footer {
+    padding: 20px;
+  }
+
+  &__last-partner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 12px;
+  }
+
+  &__login-last-partner {
+    color: $green;
+  }
+
+  &__name-last-partner {
+    @include fontMontserrat14SemiBold;
+
+    padding-bottom: 8px;
+  }
+
+  &__partners-info {
+    padding-top: 8px;
+  }
+}

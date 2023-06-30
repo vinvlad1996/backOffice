@@ -1,0 +1,32 @@
+@import "assets/scss/helper";
+
+.partners-switch-banner {
+  padding: 20px;
+  background-color: $white;
+  border: 1px solid $grey-basic05;
+  border-radius: 10px;
+  transition: 0.5s;
+
+  &--active {
+    background-color: $grey-basic05;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__title {
+    @include fontMontserrat14Regular;
+
+    color: $black;
+  }
+
+  &__description {
+    @include fontMontserrat12Regular;
+
+    padding: 4px 30px 0 0;
+    color: $grey-basic50;
+  }
+}

@@ -1,0 +1,101 @@
+<script lang="ts" src="./component.ts"></script>
+<style lang="scss" src="./component.scss" scoped></style>
+
+<template>
+  <ui-dialog
+    :show-close="true"
+    :visible="isVisible"
+    :append-to-body="true"
+    :view="uiDialogView.fullscreen"
+    :title="profileId"
+    :class="b('dialog')"
+    @close="onClose"
+  >
+    <div
+      :class="b()"
+      :data-test="tid()"
+    >
+      <div :class="b('profile')">
+        <img
+          :class="b('photo')"
+          :data-test="tid(testLocators.photo)"
+          :src="profilePhoto"
+          alt=""
+        >
+        <div :class="b('partner-data')">
+          <div
+            :class="b('profile-name')"
+            :data-test="tid(testLocators.profileName)"
+            v-html="profileName"
+          />
+          <div :class="b('subdata')">
+            <div
+              :class="b('text')"
+              :data-test="tid(testLocators.level)"
+              v-html="currentLevel"
+            />
+            <div
+              :class="('text')"
+              :data-test="tid(testLocators.branch)"
+              v-html="branchData"
+            />
+          </div>
+        </div>
+      </div>
+      <delivery-address-selector
+        :is-dialog-shown="false"
+        :class="b('addresses')"
+        :addresses="addresses"
+        :extra="addressSelectorView.default"
+      />
+      <ui-divider
+        :orientation="uiDividerOrientation.default"
+        :color="uiDividerColor.basicGrey"
+        :is-expanded="true"
+        :data-test="tid(testLocators.divider)"
+      />
+
+      <div :class="b('personal-data')">
+        <div
+          :data-test="tid(testLocators.text)"
+          v-html="textAttributes.goStatusTitle"
+        />
+        <div
+          :class="b('subtitle')"
+          :data-test="tid(testLocators.goStatus)"
+          v-html="currentGoStatus"
+        />
+        <div
+          :data-test="tid(testLocators.text)"
+          v-html="textAttributes.currentQualificationTitle"
+        />
+        <div
+          :class="b('subtitle')"
+          :data-test="tid(testLocators.qualification)"
+          v-html="currentQualification"
+        />
+        <div
+          :data-test="tid(testLocators.text)"
+          v-html="textAttributes.sponsorTitle"
+        />
+        <div
+          :class="b('subtitle')"
+          :data-test="tid(testLocators.sponsor)"
+          v-html="sponsorName"
+        />
+      </div>
+
+      <ui-divider
+        :orientation="uiDividerOrientation.default"
+        :color="uiDividerColor.basicGrey"
+        :is-expanded="true"
+        :data-test="tid(testLocators.divider)"
+      />
+      <personal-profile-activity
+        :class="b('activity')"
+        :profile-data="personalProfileData"
+        :view="profileActivityView.extra"
+      />
+    </div>
+  </ui-dialog>
+</template>

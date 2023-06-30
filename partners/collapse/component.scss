@@ -1,0 +1,127 @@
+@import "assets/scss/helper.scss";
+@import "~element-ui/packages/theme-chalk/src/mixins/mixins";
+@import "~element-ui/packages/theme-chalk/src/tree";
+
+.partners-collapse {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 100%;
+
+  &__search {
+    padding: 20px;
+    background-color: $grey-basic05;
+  }
+
+  &__filters {
+    width: 100%;
+    background-color: $grey-basic05;
+    border-radius: 40px 0 0 40px;
+  }
+
+  &__configuration {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+    padding: 20px 0 0 20px;
+    row-gap: 4px;
+  }
+
+  &__title {
+    @include fontMontserrat12Regular;
+
+    color: $black;
+  }
+
+  &__block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__expand-all-button {
+    margin-right: 20px;
+  }
+
+  &__tree {
+    box-sizing: border-box;
+    width: calc(100% - 40px);
+    margin: 0 20px;
+  }
+
+  &__wrapper {
+    position: relative;
+    padding-left: 13px;
+
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 8px;
+      height: 1px;
+      background-color: $grey-basic30;
+      content: "";
+    }
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+  }
+
+  &__text {
+    @include fontMontserrat12Regular;
+
+    color: $black;
+
+    &--colored {
+      color: $orange;
+    }
+
+    &--grey {
+      @include fontMontserrat10Regular;
+
+      position: absolute;
+      margin-top: -4px;
+      margin-left: 11px;
+      color: $grey-basic50;
+    }
+  }
+
+  @include b(tree) {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-left: 1px solid $grey-basic30;
+    row-gap: 10px;
+
+    @include b(tree-node) {
+      position: relative;
+      background-color: transparent;
+
+      @include e(expand-icon) {
+        display: none;
+      }
+
+      &__content {
+        height: 30px;
+      }
+
+      @include e(content) {
+        display: flex;
+        align-items: center;
+        padding-left: 0 !important;
+
+        &:hover {
+          background-color: transparent;
+        }
+      }
+
+      @include e(children) {
+        margin-left: 10px;
+        border-left: 1px solid $grey-basic30;
+      }
+    }
+  }
+}

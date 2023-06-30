@@ -1,0 +1,50 @@
+@import "assets/scss/helper.scss";
+
+.partners-selector {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20px;
+  background-color: $white;
+  border-bottom: 1px solid $grey-basic05;
+
+  &--active {
+    row-gap: 20px;
+    background-color: $grey-basic05;
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    padding: 20px 20px 0 20px;
+    column-gap: 12px;
+  }
+
+  &__text {
+    @include fontMontserrat12Regular;
+
+    color: $grey-basic50;
+
+    &--colored {
+      @include fontMontserrat12SemiBold;
+
+      color: $green;
+    }
+
+    &--bold {
+      @include fontMontserrat14SemiBold;
+
+      color: $black;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px 0 48px;
+    row-gap: 8px;
+  }
+
+  &__wrapper {
+    padding: 0 20px;
+  }
+}

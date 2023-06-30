@@ -1,0 +1,47 @@
+@import "assets/scss/helper";
+
+.partners-attachment-dialog {
+  @include fontMontserrat12Regular;
+
+  box-sizing: border-box;
+  width: 100%;
+
+  &__login {
+    color: $grey-basic50;
+    text-decoration-line: underline;
+  }
+
+  &__partner-name {
+    @include fontMontserrat14SemiBold;
+
+    padding: 8px 0 20px;
+    color: $green;
+  }
+
+  &__banner {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: $grey-basic05;
+    border-radius: 10px;
+    row-gap: 12px;
+  }
+
+  &__banner-title {
+    @include fontMontserrat14SemiBold;
+  }
+
+  &__item {
+    margin-bottom: 4px;
+    color: $grey-basic50;
+  }
+
+  &__content {
+    @include fontMontserrat14Regular;
+  }
+
+  &__comment {
+    margin: 8px 0 20px;
+    padding: 0 0 0 20px;
+  }
+}

@@ -1,0 +1,23 @@
+@import "assets/scss/helper.scss";
+
+.partners-info {
+  display: flex;
+  align-items: center;
+  column-gap: 3px;
+
+  &__icon {
+    margin-right: 4px;
+  }
+
+  &__text {
+    @include fontMontserrat12Regular;
+
+    display: ruby;
+    color: $grey-basic50;
+
+    &--underline {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+}
